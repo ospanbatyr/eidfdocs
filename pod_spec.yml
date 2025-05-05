@@ -1,0 +1,34 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  generateName: dmi-job-
+  labels:
+    kueue.x-k8s.io/queue-name: eidf029ns-user-queue
+    eidf.user: s2745300-infk8s
+spec:
+  completions: 1
+  backoffLimit: 1
+  ttlSecondsAfterFinished: 1800
+  template:
+    metadata:
+      name: dmi-pod
+    spec:
+      containers:
+      - name: cudasample
+        image: busybox
+        args: ["sleep", "infinity"]
+        resources:
+          requests:
+            cpu: 2
+            memory: '1Gi'
+          limits:
+            cpu: 2
+            memory: '4Gi'
+        volumeMounts:
+          - mountPath: /mnt/ceph
+            name: volume
+      restartPolicy: Never
+      volumes:
+        - name: volume
+          persistentVolumeClaim:
+            claimName: dmi
