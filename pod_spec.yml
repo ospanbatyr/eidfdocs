@@ -4,7 +4,7 @@ metadata:
   generateName: dmi-job-
   labels:
     kueue.x-k8s.io/queue-name: eidf029ns-user-queue
-    eidf.user: s2745300-infk8s
+    eidf/user: s2745300-infk8s
 spec:
   completions: 1
   backoffLimit: 1
