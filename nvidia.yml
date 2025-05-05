@@ -3,7 +3,8 @@ kind: Job
 metadata:
  generateName: jobtest-
  labels:
-  kueue.x-k8s.io/queue-name:  <project-namespace>-user-queue
+  kueue.x-k8s.io/queue-name:  eidf029ns-user-queue
+  eidf/user: s2745300-infk8s
 spec:
  completions: 1
  backoffLimit: 1
@@ -25,3 +26,4 @@ spec:
        memory: '4Gi'
        nvidia.com/gpu: 1
    restartPolicy: Never
+   
