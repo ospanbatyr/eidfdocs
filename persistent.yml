@@ -1,0 +1,11 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+ name: dmi
+spec:
+ accessModes:
+  - ReadWriteMany
+ resources:
+  requests:
+   storage: 300Gi
+ storageClassName: csi-cephfs-sc
