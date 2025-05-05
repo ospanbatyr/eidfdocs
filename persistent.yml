@@ -2,6 +2,8 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
  name: dmi
+ labels:
+  eidf/user: s2745300-infk8s
 spec:
  accessModes:
   - ReadWriteMany
